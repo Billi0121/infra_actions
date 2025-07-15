@@ -19,6 +19,6 @@ from django.urls import path
 from infra_app import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.index),
+    path('admin/', admin.site.urls),
 ]
