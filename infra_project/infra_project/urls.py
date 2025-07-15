@@ -20,6 +20,6 @@ from infra_app import views
 
 urlpatterns = [
     path("", include("infra_app.urls", namespace="infra_app")),
-    path("second_page/", views.second_page),
+    path("/second_page/", views.second_page),
     path("admin/", admin.site.urls),
 ]
