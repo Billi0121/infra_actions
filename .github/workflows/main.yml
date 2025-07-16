@@ -61,7 +61,7 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
+        key: ${{ secrets.SSH_KEY }} #nowdwaodno
         script: |
           # Выполняет pull образа с DockerHub
           sudo docker pull <имя-пользователя>/<имя-репозитория>
