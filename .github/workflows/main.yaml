@@ -26,7 +26,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/infra:latest 
           
   deploy:
-    runs-on: ubuntu-latest          #no change
+    runs-on: ubuntu-latest          #no changewdwdw
     needs: build_and_push_to_docker_hub
     steps:
       - name: executing remote ssh commands to deploy
