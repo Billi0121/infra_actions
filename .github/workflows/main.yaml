@@ -26,7 +26,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/infra:latest 
           
   deploy:
-    runs-on: ubuntu-latest          #no changewdwdw
+    runs-on: ubuntu-latest          #
     needs: build_and_push_to_docker_hub
     steps:
       - name: executing remote ssh commands to deploy
@@ -45,7 +45,7 @@ jobs:
             echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
-            echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+            echo DB_PORT=${{ secrets.DB_PORT }} >> .env 
             sudo docker-compose up -d 
 ##ee
   send_message:
