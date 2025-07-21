@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         # Выбор версии Python
-        python-version: 3.7
+        python-version: 3.13
 
     - name: Install dependencies
       run: | 
@@ -63,7 +63,9 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker-compose stop
-            sudo docker-compose rm web
+            sudo docker image rm 
+            sudo docker image stop ${{ secrets.DOCKER_USERNAME }}/infra:latest
+            sudo docker image rm ${{ secrets.DOCKER_USERNAME }}/infra:latest
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
